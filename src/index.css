@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #F5F5F5;
+    color: rgb(62, 40, 40);
+    height: 100vh;
+    margin: 0;
+    box-shadow: 20px 20px 20px #77997713;
+    display: grid;
+    place-items: center;
+  }
+  
+  .sparkle {
+    width: 20px;
+    height: 20px;
+    background: rgba(93, 109, 225, 0.7);
+    border-radius: 20%;
+    position: absolute;
+    animation: sparkleAnimation 1s infinite linear;
+    box-shadow: 0 0 20px #77997713, 0 0 40px #de434326, 0 0 80px #00ff000f;
+    z-index: -1;
+  }
+  
+  @keyframes sparkleAnimation {
+    0% {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(calc(var(--randomYDirection) * 100px)) translateX(calc(var(--randomXDirection) * 100px));
+    }
+  }
+  
+  p.credit {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    margin: 0;
+    padding: 5px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: -15%;
+    margin-bottom: 1rem;
+  }
+  
